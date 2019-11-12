@@ -1,0 +1,201 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
+import pandas as pd
+import numpy as np
+
+
+# In[5]:
+
+
+s = pd.Series([0, 1, 4, 9, 16, 25], name='squares')
+print(s.index)
+print(s.values, s.index)
+print(s[2:4])
+
+
+# In[6]:
+
+
+pop2014 = pd.Series([100, 99.3, 95.5], index=['java','c','c++'])
+print(pop2014)
+
+
+# In[11]:
+
+
+pop2015 = pd.Series({'java':100, 'c':99.3, 'c++':95.5})
+print(pop2015)
+
+
+# In[12]:
+
+
+print(pop2014.index)
+
+
+# In[14]:
+
+
+print(pop2014.iloc[0:2])
+print(pop2014.loc['c'])
+
+
+# In[15]:
+
+
+twoYears = pd.DataFrame({'2014': pop2014, '2015': pop2015 })
+print(twoYears)
+
+
+# In[16]:
+
+
+twoYears['Average'] = 0.5* (twoYears['2014']+twoYears['2015'])
+print(twoYears)
+
+
+# In[18]:
+
+
+test_data = pd.DataFrame
+(np.random.choice(['a','b','c','d'], (3,3)),
+index=[1,2,3], columns=['AA','BB','CC'])
+print(test_data)
+
+
+# In[19]:
+
+
+open('tips.csv','r').readlines()[:10]
+
+
+# In[20]:
+
+
+tips=pd.read_csv('tips.csv')
+tips.head()
+
+
+# In[21]:
+
+
+print(tips[:10])
+
+
+# In[22]:
+
+
+tips.mean()
+
+
+# In[23]:
+
+
+tips['tip'].mean()
+
+
+# In[24]:
+
+
+tips.dtypes
+
+
+# In[25]:
+
+
+tips.describe()
+
+
+# In[26]:
+
+
+tips.groupby('gender').mean()
+
+
+# In[29]:
+
+
+t=tips.groupby(['gender','smoker']).mean()
+print(t['tip'])
+
+
+# In[30]:
+
+
+pd.pivot_table(tips, 'total_bill', 'gender', 'smoker')
+
+
+# In[31]:
+
+
+pd.pivot_table(tips, 'total_bill',
+['gender', 'smoker'], ['day','time'])
+
+
+# In[34]:
+
+
+from matplotlib import pyplot as plt
+url='http://archive.ics.uci.edu/ml/
+machine-learning-databases/iris/iris.data'
+df = pd.read_csv(url)
+df.head()
+
+
+# In[35]:
+
+
+df.columns = ['sepal_length', 'sepal_width',
+'petal_length', 'petal_width', 'flower_type']
+df.head()
+
+
+# In[36]:
+
+
+df['flower_type'] = df['flower_type'].astype('category')
+
+
+# In[39]:
+
+
+df.flower_type = df.flower_type.cat.rename_categories([0,1,2])
+df.head()
+print(df[40:50])
+
+
+# In[40]:
+
+
+print(len(df))
+
+
+# In[41]:
+
+
+df['flower_type'].describe()
+
+
+# In[42]:
+
+
+df.hist()
+plt.show()
+
+
+# In[43]:
+
+
+pd.scatter_matrix(df, diagonal='kde')
+plt.show()
+
+
+# In[44]:
+
+
+df.to_csv('iris_normalized.csv')
+

@@ -1,0 +1,64 @@
+
+# coding: utf-8
+
+# In[1]:
+
+
+for i in range (1, 10, 1):
+    print(i);
+
+list1 = [0,0,10]
+
+print(min(list1))
+
+L = ['A', 'B', 'C']
+
+for x in L:
+    print(x)
+
+for i in range (len(L)):
+    L[i] = L[i] + ' is zombie'
+
+for x in L:
+    print(x)
+
+
+# ### append
+
+# In[3]:
+
+
+x = [1,2,3]
+x.append([4,5])
+print(x)
+
+
+# ### extend
+
+# In[5]:
+
+
+x.extend([8,9])
+print(x)
+
+
+# ### enumerate,zip
+
+# In[6]:
+
+
+days = ["Sun","Mon","Tue"]
+daysFr = ["Dim","Lun","Mar"]
+
+for m in range (len (days)):
+    print(m+1,days[m])
+
+for i,m in enumerate (days,start=1):
+    print(i,m)
+
+for m in zip (days,daysFr):
+    print(m)
+
+for i,m in enumerate (zip(days,daysFr),start=1):
+    print(i,m[0],"=",m[1],"in French")
+

@@ -1,0 +1,109 @@
+for i in range (1, 10, 1):
+    print(i);
+
+list1 = [0,0,10]
+
+print(min(list1))
+
+L = ['Rafa', 'Humu', 'Rodo']
+
+for x in L:
+    print(x)
+
+
+for i in range (len(L)):
+    L[i] = L[i] + 'is zombie'
+
+for x in L:
+    print(x)
+
+x = [1,2,3]
+x.append([4,5])
+print(x)
+
+x.extend([8,9])
+print(x)
+
+days = ["Sun","Mon","Tue"]
+daysFr = ["Dim","Lun","Mar"]
+
+for m in range (len (days)):
+    print(m+1,days[m])
+
+
+for i,m in enumerate (days,start=1):
+    print(i,m)
+
+for m in zip (days,daysFr):
+    print(m)
+
+for i,m in enumerate (zip(days,daysFr),start=1):
+    print(i,m[0],"=",m[1],"in French")
+
+
+
+    #2nde lab
+    #lambda expression
+    #lambda arguments: expression
+    #anonymous functions; accept multiple arguments but expression
+
+lambda_test = lambda a:a+10
+print(lambda_test(5))
+
+new_lambda_test = lambda q,w,y,z : q+w+y+z+10
+print(new_lambda_test(20,20,20,20))
+#exit()
+
+pairs = [(1, 'one'),(2, 'two'), (3, 'three'), (4, 'four')]
+pairs.sort( key =lambda pair: pair[1])
+print(pairs)
+
+
+
+
+
+
+
+
+
+
+def make_incrementor(n):
+    return lambda x : x+n
+f = make_incrementor(42)
+print(f(0))
+
+#evens = [2,4,6,8,10,12,14,16,18,20]
+
+#odds = [1, 3, 5,7,9]
+#evenSquared_new = [e ** for e in evens if e>4 and e<16]
+
+
+
+#SET-1, TASK-2
+list1 = [2,3,4]
+list2 = [3,1,7]
+
+for i in range (len(list1)):
+    print(max(list1[i],list2[i]))
+
+
+#set-1, task -1
+
+
+
+task1= [['a', 1], ['b', 2],['c', 3],['d', 4],['e', 5],['f', 6],['g', 7],['h', 8],['i', 9],['j', 10]]
+#print(len(task1))
+
+for i in range (len(task1)):
+    task1.sort( key =lambda pair: pair[1])
+    print(task1)
+
+#if(task1[1]>8)
+    prtint(task1)
+
+
+
+
+
+
+

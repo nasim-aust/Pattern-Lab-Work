@@ -1,0 +1,9 @@
+python --version
+pip install full_path_to_package
+pip install -U numpy
+
+pip install "F:\compare Clusters\basemap-1.2.0-cp36-cp36m-win_amd64.whl"
+
+
+https://www.lfd.uci.edu/~gohlke/pythonlibs/#basemap
+

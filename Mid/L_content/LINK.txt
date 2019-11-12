@@ -1,0 +1,5 @@
+Python Basic: https://docs.python.org/3/tutorial/index.html
+Python NumPy: https://docs.scipy.org/doc/numpy-1.15.0/user/quickstart.html
+Python Pandas DataFrame: https://pandas.pydata.org/pandas-docs/stable/tutorials.html
+SciPy (Scientific Python): https://docs.scipy.org/doc/scipy/reference/
+
